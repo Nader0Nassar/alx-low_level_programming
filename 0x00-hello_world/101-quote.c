@@ -7,6 +7,9 @@
  */
 int main(void)
 {
-	system("echo 'and that piece of art is useful\" - Dora Korpar, 2015-10-19'")
+	string Qu = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	write(1, Qu, sizeof(Qu));
+
 	return (1);
 }
