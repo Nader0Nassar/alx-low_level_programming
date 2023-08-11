@@ -13,22 +13,22 @@
 int main(void)
 {
 	int n;
-	int Last_Digit;/* Allocate 4 Bytes for Last_Digit */
+	int LDigit;/* Allocate 4 Bytes for Last_Digit */
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	Last_Digit = n % 10;/* Last digit is the remainder of dividing by 10 */
-	if (Last_Digit > 5)/* Creat if statement to complete the printed sentence */
+	LDigit = n % 10;/* Last digit is the remainder of dividing by 10 */
+	if (LDigit > 5)/* Creat if statement to complete the printed sentence */
 	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, Last_Digit);
+		printf("Last digit of %d is %d and is greater than 5\n", n, LDigit);
 	}
-	else if (Last_Digit == 0)
+	else if (LDigit == 0)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, Last_Digit);
+		printf("Last digit of %d is %d and is 0\n", n, LDigit);
 	}
-	else if (Last_Digit < 6 && Last_Digit != 0)
+	else if (LDigit < 6 && LDigit != 0)
 	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, Last_Digit);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, LDigit);
 	}
 	return (0);
 }
