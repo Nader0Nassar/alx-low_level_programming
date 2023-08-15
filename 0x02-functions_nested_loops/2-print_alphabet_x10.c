@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet -  prints the alphabet, in lowercase 10 times , followed by a new line
+ * print_alphabet_x10 -  prints the alphabet 10 times , followed by a new line
  *
  * Return: On success 1.
  */
@@ -9,7 +9,7 @@ void print_alphabet_x10(void)
 {
 	int Ascii_of_small;
 	int rows = 1;
-	
+
 	while (rows <= 10)
 	{
 		Ascii_of_small = 'a';
