@@ -11,7 +11,7 @@
 int print_last_digit(int Num)
 {
 	if (Num < 0)
-		return (_abs(Num % 10));
+		return (-1 * (Num % 10));
 	else
 		return (Num % 10);
 }
