@@ -23,8 +23,6 @@ void print_times_table(int n)
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(num3 + '0');
-				if (num2 < n)
-					_putchar(',');
 			}
 			else if (num3 <= 99)
 			{
