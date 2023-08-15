@@ -7,11 +7,12 @@
  */
 void print_alphabet(void)
 {
-	int counter = 0;
+	int Ascii_of_small = 'a';
 
-	for (counter; counter <= 26; counter++)
+	while (Ascii_of_small <= 'z')
 	{
-		_putchar('a' + counter);
+		_putchar(Ascii_of_small);
+		Ascii_of_small++;
 	}
 	_putchar('\n');
 }
