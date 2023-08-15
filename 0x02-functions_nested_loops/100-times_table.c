@@ -29,16 +29,12 @@ void print_times_table(int n)
 				_putchar(' ');
 				_putchar(num3 / 10 + '0');
 				_putchar(num3 % 10 + '0');
-				if (num2 < n)
-					_putchar(',');
 			}
 			else if (num3 >= 100)
 			{
 				_putchar(num3 / 100 + '0');
 				_putchar((num3 / 10) % 10 + '0');
 				_putchar(num3 % 10 + '0');
-				if (num2 < n)
-					_putchar(',');
 			}
 		}
 		_putchar('\n');
