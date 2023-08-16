@@ -14,14 +14,15 @@ int fibonacci(int);
 
 int main(void)
 {
-	int n=1;
+	int n = 1;
 
-	for (n; n <= 50; n++)
+	while (n <= 50)
 	{
 		if (n == 50)
 			printf("%d", fibonacci(n));
 		else
 			printf("%d, ", fibonacci(n));
+		n++;
 	}
 	printf("\n");
 	return (0);
