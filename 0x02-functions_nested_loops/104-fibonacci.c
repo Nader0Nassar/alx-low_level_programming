@@ -11,7 +11,7 @@ int digit_Count(int a)
 {
 	int c_digits = 0;
 
-	if(!a)
+	if (!a)
 		return (1);
 	while (a)
 	{
@@ -35,11 +35,11 @@ int main(void)
 	unsigned long int Add, Add0 = 0, Max_value = 100000000;
 	int init, i;
 
-	for(i = 1; i<= 98; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		if (num1_p2 > 0)
 			printf("%lu", num1_p2);
-		
+	
 		init = digit_Count(Max_value) - 1 - digit_Count(num1_p1);
 		while (num1_p2 > 0 && init > 0)
 		{
