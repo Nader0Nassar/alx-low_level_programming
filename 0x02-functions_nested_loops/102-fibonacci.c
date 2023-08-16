@@ -3,47 +3,27 @@
 /**
  * main - Entry point
  *
- * Description:  print the first 50 Fibonacci numbers, starting with 1 and 2
- *
- * @int: data typ of input of Fibonacci function
+ * Description:  print the first 50 Fibonacci numbers
  *
  * Return: Always 0 (Success)
  */
 
-unsigned long fibonacci(unsigned long);
-
 int main(void)
 {
-	unsigned long n = 1;
+	unsigned long num_1, num_2, Add;
+	int i = 0;
 
-	while (n <= 50)
+	while (i <= 49)
 	{
-		if (n == 50)
-			printf("%lu", fibonacci(n));
+		Add = num_1 + num_2;
+		printf("%lu", Add);
+		num_1 = num_2;
+		num_2 = Add;
+		if (i != 49)
+			printf(",");
 		else
-			printf("%lu, ", fibonacci(n));
-		n++;
+			printf("\n");
+	i++;
 	}
-	printf("\n");
-	return (0);
-}
-
-/**
- * fibonacci - fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)
- *
- * Description:  Fibonacci Numbers
- *
- * @num: input of Fibonacci
- *
- * Return: Always value of Fib0 (Success)
- */
-unsigned long fibonacci(unsigned long num)
-{
-	if (num == 1)
-		return (1);
-	else if (num == 2)
-		return (2);
-	else if (num > 2)
-		return (fibonacci(num - 1) + fibonacci(num - 2));
 	return (0);
 }
