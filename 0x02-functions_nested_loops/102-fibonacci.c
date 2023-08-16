@@ -14,9 +14,9 @@ int fibonacci(int);
 
 int main(void)
 {
-	int n;
+	int n=1;
 
-	for (n = 1; n <= 50; n++)
+	for (n; n <= 50; n++)
 	{
 		if (n == 50)
 			printf("%d", fibonacci(n));
