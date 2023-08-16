@@ -38,9 +38,9 @@ int main(void)
 	for(i = 1; i<= 98; i++)
 	{
 		if (num1_p2 > 0)
-			printf("lu", num1_p2);
+			printf("%lu", num1_p2);
 		
-		init = c_Digits(Max_value) - 1 - c_Digits(num1_p1);
+		init = digit_Count(Max_value) - 1 - digit_Count(num1_p1);
 		while (num1_p2 > 0 && init > 0)
 		{
 			printf("%d", 0);
