@@ -16,10 +16,12 @@ int main(void)
 {
 	int n;
 
-	for (n = 2; n <= 52; n++)
+	for (n = 1; n <= 50; n++)
 	{
-
-		printf("%d, ", fibonacci(n));
+		if (n == 50)
+			printf("%d", fibonacci(n));
+		else
+			printf("%d, ", fibonacci(n));
 	}
 	printf("\n");
 	return (0);
@@ -36,11 +38,11 @@ int main(void)
  */
 int fibonacci(int num)
 {
-	if (num == 0)
-		return (0);
-	else if (num == 1)
+	if (num == 1)
 		return (1);
-	else if (num > 1)
+	else if (num == 2)
+		return (2);
+	else if (num > 2)
 		return (fibonacci(num - 1) + fibonacci(num - 2));
 	return (0);
 }
