@@ -10,18 +10,18 @@
  * Return: Always 0 (Success)
  */
 
-int fibonacci(int);
+long long int fibonacci(long long int);
 
 int main(void)
 {
-	int n = 1;
+	long long int n = 1;
 
 	while (n <= 50)
 	{
 		if (n == 50)
-			printf("%d", fibonacci(n));
+			printf("%lld", fibonacci(n));
 		else
-			printf("%d, ", fibonacci(n));
+			printf("%lld, ", fibonacci(n));
 		n++;
 	}
 	printf("\n");
@@ -37,7 +37,7 @@ int main(void)
  *
  * Return: Always value of Fib0 (Success)
  */
-int fibonacci(int num)
+long long int fibonacci(long long int num)
 {
 	if (num == 1)
 		return (1);
