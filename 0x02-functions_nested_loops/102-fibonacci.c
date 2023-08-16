@@ -13,6 +13,8 @@ int main(void)
 	unsigned long num_1, num_2, Add;
 	int i = 0;
 
+	num_1 = 0;
+	num_2 = 1;
 	while (i <= 49)
 	{
 		Add = num_1 + num_2;
