@@ -22,7 +22,7 @@ int main(void)
 		num_1 = num_2;
 		num_2 = Add;
 		if (i != 49)
-			printf(",");
+			printf(", ");
 		else
 			printf("\n");
 	i++;
