@@ -46,7 +46,7 @@ int main(void)
 			init--;
 		}
 		printf("%lu", num1_p1);
-		Add = (num1_p1 + num2_p2) % Max_value;
+		Add = (num1_p1 + num2_p1) % Max_value;
 		Add0 = num1_p2 + num2_p2 + (num1_p1 + num2_p1) / Max_value;
 		num1_p1 = num2_p1;
 		num1_p2 = num2_p2;
