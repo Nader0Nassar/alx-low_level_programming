@@ -11,26 +11,12 @@
 
 void print_number(int n)
 {
-	unsigned int digits, divider = 1;
-
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -1 * n;
 	}
-	else if (n == 0)
-	{
-		_putchar('0');
-	}
-	digits = n;
-	while (digits)
-	{
-		digits /= 10;
-		divider *= 10;
-	}
-	while (divider != 1)
-	{
-		_putchar('0' + (n / (divider / 10)) % 10);
-		divider /= 10;
-	}
+	if (n / 10 > 0)
+		print_number(n/10);
+	_putchar('0' + n % 10);
 }
