@@ -11,39 +11,24 @@
 
 void print_number(int n)
 {
+	int digits, divider = 1;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -1 * n;
 	}
-	if (n <= 9)
+	else if (n == 0)
+		_putchar('0');
+	digits = n;
+	while (digits)
 	{
-		_putchar('0' + n);
+		digits /= 10;
+		divider *= 10;
 	}
-	else if (n <= 99)
+	while (divider != 1)
 	{
-		_putchar('0' + n / 10);
-		_putchar('0' + n % 10);
-	}
-	else if (n <= 999)
-	{
-		_putchar('0' + n / 100);
-		_putchar('0' + (n / 10) % 10);
-		_putchar('0' + n % 10);
-	}
-	else if (n <= 9999)
-	{
-		_putchar('0' + n / 1000);
-		_putchar('0' + (n / 100) % 10);
-		_putchar('0' + (n / 10) % 10);
-		_putchar('0' + n % 10);
-	}
-	else if (n <= 99999)
-	{
-		_putchar('0' + n / 10000);
-		_putchar('0' + (n / 1000) % 10);
-		_putchar('0' + (n / 100) % 10);
-		_putchar('0' + (n / 10) % 10);
-		_putchar('0' + n % 10);
+		_putchar('0' + (n / (divider / 10)) % 10);
+		divider /= 10;
 	}
 }
