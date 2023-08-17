@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -10,7 +11,7 @@ int main(void)
 {
 	unsigned long int i, primary_Factor;
 
-	for (i = 2; i <= 1000000000; i++)
+	for (i = 2; i <= 100000000; i++)
 	{
 		if (612852475143 % i == 0)
 		{
