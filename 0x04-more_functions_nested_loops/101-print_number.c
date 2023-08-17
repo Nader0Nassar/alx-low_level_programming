@@ -11,7 +11,7 @@
 
 void print_number(int n)
 {
-	int digits, divider = 1;
+	unsigned int digits, divider = 1;
 
 	if (n < 0)
 	{
