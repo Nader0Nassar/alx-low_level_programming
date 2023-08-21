@@ -10,25 +10,19 @@
 
 void rev_string(char *s)
 {
-	char *rev_str = s;
-	char *first = s;
-	char *end = rev_str;
-	int i;
+	int i = 0, j = 0, index = 0, length = 0;
+	char temp_Char;
 
-	while (*first != '\0')
+	while (s[i] != '\0')
 	{
-		first++;
+		length++;
+		i++;
 	}
-	first--;
-	while (first >= s)
+	for (index = length - 1; index >= length / 2; index--)
 	{
-		*end = *first;
-		first--;
-		end++;
-	}
-	*end = '\0';
-	for (i = 0; i < 10; i++)
-	{
-		s[i] = rev_str[i];
+		temp_Char = s[j];
+		s[j] = s[index];
+		s[index] = temp_Char;
+		j++;
 	}
 }
