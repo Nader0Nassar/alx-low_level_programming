@@ -20,7 +20,7 @@ int main(void)
 		chars_Ascii = chars_Ascii + random_Char;
 		printf("%c", random_Char);
 	}
-	printf("%c", j - chars_Ascii);
+	printf("%c\n", j - chars_Ascii);
 
 	return (0);
 }
