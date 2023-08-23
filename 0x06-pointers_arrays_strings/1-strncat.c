@@ -20,23 +20,25 @@ int _strlen(char *s)
 }
 
 /**
- * _strcat - This function concatenates two strings
+ * _strncat - This function concatenates string
+ *            to first n char of another string
  * @dest: first string
  * @src: second string
+ * @n: Number of chars concatenated
  *
  * Return: Always 0
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0, j = _strlen(src);
-	int destlen = _strlen(dest), srclen = _strlen(src);
+	int i = 0, j = 0;
+	int destlen = _strlen(dest);
 
-	while (i < _strlen(src) && j >= 1)
+	while (i < _strlen(src) && j < n)
 	{
-		dest[destlen + i] = src[srclen - j];
+		dest[destlen + i] = src[j];
 		i++;
-		j--;
+		j++;
 	}
 	return (dest);
 }
