@@ -10,7 +10,8 @@
 char *cap_string(char *lower_string)
 {
 	int index1, index2, Ascii_of_char;
-	char Separators[] = {' ', '\n', '\t', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\0'};
+	char Separators[] = {' ', '\n', '\t', ',', ';', '.', '!', '?',
+									 '"', '(', ')', '{', '}', '\0'};
 
 	for (index1 = 0; lower_string[index1] != '\0'; index1++)
 	{
