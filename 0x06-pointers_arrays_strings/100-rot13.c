@@ -20,6 +20,7 @@ char *rot13(char *coded_string)
 			if (coded_string[index1] == coded_char[index2])
 			{
 				coded_string[index1] = code[index2];
+				break;
 			}
 		}
 	}
