@@ -9,19 +9,20 @@
 
 char *cap_string(char *lower_string)
 {
-	int index1, index2;
-	char Separators[] = {' ', '\t', '\n', ',', ';', '.', '!',
-						'?', '"', '(', ')', '{', '}', '\0'};
+	int index;
 
-	for (index1 = 0; lower_string[index1] != '\0'; index1++)
+	for (index = 0; lower_string[index] != '\0'; index++)
 	{
-		for (index2 = 0; Separators[index2] != '\0'; index2++)
+		if (lower_string[index] == ' ' || lower_string[index] == '\t' ||
+			lower_string[index] == '\n' || lower_string[index] == ',' ||
+			lower_string[index] == ';' || lower_string[index] == '.' ||
+			lower_string[index] == '!' || lower_string[index] == '?' ||
+			lower_string[index] == '"' || lower_string[index] == '(' ||
+			lower_string[index] == ')' || lower_string[index] == '{' ||
+			lower_string[index] == '}')
 		{
-			if (lower_string[index1] == Separators[index2] || index1 == 0)
-			{
-				if (lower_string[index1 + 1] >= 97 && lower_string[index1 + 1] <= 122)
-					lower_string[index1 + 1] -= 32;
-			}
+			if (lower_string[index + 1] >= 97 && lower_string[index + 1] <= 122)
+				lower_string[index + 1] -= 32;
 		}
 	}
 	return (lower_string);
