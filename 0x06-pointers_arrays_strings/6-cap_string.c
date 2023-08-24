@@ -18,7 +18,7 @@ char *cap_string(char *lower_string)
 	{
 		for (index2 = 0; Separators[index2] != '\0'; index2++)
 		{
-			if (lower_string[index1] == Separators[index2])
+			if (lower_string[index1] == Separators[index2] || index1 == 0)
 			{
 				Ascii_of_char = lower_string[index1 + 1];
 				if (Ascii_of_char >= 97 && Ascii_of_char <= 122)
