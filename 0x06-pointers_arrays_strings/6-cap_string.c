@@ -23,5 +23,9 @@ char *cap_string(char *ls)
 		}
 		i++;
 	}
+	if (ls[0] >= 'a' && ls[0] <= 'z')
+	{
+		ls[0] -= 32;
+	}
 	return (ls);
 }
