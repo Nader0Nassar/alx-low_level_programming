@@ -2,7 +2,7 @@
 
 /**
  * string_toupper - This function changes lowercase letters to uppercases.
- * @lower_string: array of integers.
+ * @lower_string: lower string.
  *
  * Return: Always 0
  */
