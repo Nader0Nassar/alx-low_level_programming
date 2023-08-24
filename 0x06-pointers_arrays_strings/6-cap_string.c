@@ -2,28 +2,25 @@
 
 /**
  * cap_string - This function capitalizes all words of a string.
- * @lower_string: lower string.
+ * @ls: lower string.
  *
  * Return: Always 0
  */
 
-char *cap_string(char *lower_string)
+char *cap_string(char *ls)
 {
-	int index;
+	int i;
 
-	for (index = 0; lower_string[index] != '\0'; index++)
+	for (i = 0; ls[i] != '\0'; i++)
 	{
-		if (lower_string[index] == ' ' || lower_string[index] == '\t' ||
-			lower_string[index] == '\n' || lower_string[index] == ',' ||
-			lower_string[index] == ';' || lower_string[index] == '.' ||
-			lower_string[index] == '!' || lower_string[index] == '?' ||
-			lower_string[index] == '"' || lower_string[index] == '(' ||
-			lower_string[index] == ')' || lower_string[index] == '{' ||
-			lower_string[index] == '}')
+		if (ls[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
+			ls[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
+			ls[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
+			ls[i] == '{' || ls[i] == '}')
 		{
-			if (lower_string[index + 1] >= 97 && lower_string[index + 1] <= 122)
-				lower_string[index + 1] -= 32;
+			if (ls[i + 1] >= 97 && ls[i + 1] <= 122)
+				ls[i + 1] -= 32;
 		}
 	}
-	return (lower_string);
+	return (ls);
 }
