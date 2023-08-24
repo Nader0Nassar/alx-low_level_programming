@@ -19,10 +19,10 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	if (Ascii_s1 == Ascii_s2)
-		return (0);
+		return (Ascii_s1  - Ascii_s2);
 	else if (Ascii_s1 > Ascii_s2)
-		return (15);
+		return (Ascii_s1  - Ascii_s2);
 	else if (Ascii_s1 < Ascii_s2)
-		return (-15);
+		return (Ascii_s1  - Ascii_s2);
 	return (0);
 }
