@@ -13,7 +13,10 @@ char *cap_string(char *lower_string)
 	char Separators[] = {' ', '\n', '\t', ',', ';', '.', '!', '?',
 									 '"', '(', ')', '{', '}', '\0'};
 
-	lower_string[0] -= 32;
+	if (lower_string[0] >= 97 && lower_string[0] <= 122)
+	{
+		lower_string[0] -= 32;
+	}
 	for (index1 = 0; lower_string[index1] != '\0'; index1++)
 	{
 		for (index2 = 0; Separators[index2] != '\0'; index2++)
