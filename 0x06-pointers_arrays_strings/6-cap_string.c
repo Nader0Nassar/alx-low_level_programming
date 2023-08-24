@@ -15,6 +15,8 @@ char *cap_string(char *lower_string)
 
 	for (index1 = 0; lower_string[index1] != '\0'; index1++)
 	{
+		if (index1 == 0)
+			lower_string[index1] -= 32;
 		for (index2 = 0; Separators[index2] != '\0'; index2++)
 		{
 			if (lower_string[index1] == Separators[index2])
