@@ -18,7 +18,7 @@ char *cap_string(char *ls)
 			ls[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
 			ls[i] == '{' || ls[i] == '}')
 		{
-			if (ls[i + 1] >= 97 && ls[i + 1] <= 122)
+			if (ls[i + 1] >= 'a' && ls[i + 1] <= 'z')
 				ls[i + 1] = ls[i + 1] - 32;
 		}
 		i++;
