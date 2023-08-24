@@ -19,7 +19,7 @@ char *cap_string(char *ls)
 			ls[i] == '{' || ls[i] == '}')
 		{
 			if (ls[i + 1] >= 97 && ls[i + 1] <= 122)
-				ls[i + 1] -= 32;
+				ls[i + 1] = ls[i + 1] - 32;
 		}
 	}
 	return (ls);
