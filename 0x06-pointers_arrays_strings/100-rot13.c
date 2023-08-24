@@ -9,7 +9,7 @@
 
 char *rot13(char *coded_string)
 {
-    int index1, index2;
+	int index1, index2;
 	char coded_char[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char code[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
