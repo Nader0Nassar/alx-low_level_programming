@@ -2,20 +2,20 @@
 
 /**
  * cap_string - This function capitalizes all words of a string.
- * @ls: lower string.
+ * @lower_string: lower string.
  *
  * Return: Always 0
  */
 
-char *cap_string(char *ls)
+char *cap_string(char *lower_string)
 {
 	int i = 0;
 
-	while (ls[i] != '\0')
+	while (lower_string[i] != '\0')
 	{
-		if (ls[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
-			ls[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
-			ls[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
+		if (lower_string[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
+			lower_string[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
+			lower_string[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
 			ls[i] == '{' || ls[i] == '}')
 		{
 			if (ls[i + 1] >= 'a' && ls[i + 1] <= 'z')
