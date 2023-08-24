@@ -25,6 +25,8 @@ char *cap_string(char *lower_string)
 					lower_string[index1 + 1] -= 32;
 			}
 		}
+		if (lower_string[index1] == 9)
+			lower_string[index1] = 32;
 	}
 	return (lower_string);
 }
