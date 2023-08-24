@@ -13,7 +13,7 @@ char *cap_string(char *ls)
 
 	for (i = 0; ls[i] != '\0'; i++)
 	{
-		if (ls[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
+		if (i = 0 || ls[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
 			ls[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
 			ls[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
 			ls[i] == '{' || ls[i] == '}')
