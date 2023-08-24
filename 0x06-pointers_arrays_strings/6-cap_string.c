@@ -9,9 +9,9 @@
 
 char *cap_string(char *ls)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; ls[i] != '\0'; i++)
+	while (ls[i] != '\0')
 	{
 		if (ls[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
 			ls[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
@@ -21,6 +21,7 @@ char *cap_string(char *ls)
 			if (ls[i + 1] >= 97 && ls[i + 1] <= 122)
 				ls[i + 1] = ls[i + 1] - 32;
 		}
+		i++;
 	}
 	return (ls);
 }
