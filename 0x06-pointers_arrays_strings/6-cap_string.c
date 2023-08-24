@@ -9,23 +9,22 @@
 
 char *cap_string(char *lower_string)
 {
-	int i = 0;
+	int index1, index2, Ascii_of_char;
+	char Separators[] = {' ', '\n', '\t', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\0'};
 
-	while (lower_string[i] != '\0')
+	for (index1 = 0; lower_string[index1] != '\0'; index1++)
 	{
-		if (lower_string[i] == ' ' || ls[i] == '\t' || ls[i] == '\n' ||
-			lower_string[i] == ',' || ls[i] == ';' || ls[i] == '.' || ls[i] == '!' ||
-			lower_string[i] == '?' || ls[i] == '"' || ls[i] == '(' || ls[i] == ')' ||
-			ls[i] == '{' || ls[i] == '}')
+		for (index2 = 0; Separators[index2] != '\0'; index2++)
 		{
-			if (ls[i + 1] >= 'a' && ls[i + 1] <= 'z')
-				ls[i + 1] = ls[i + 1] - 32;
+			if (lower_string[index1] == Separators[index2])
+			{
+				Ascii_of_char = lower_string[index1 + 1];
+				if (Ascii_of_char >= 97 && Ascii_of_char <= 122)
+				{
+					lower_string[index1 + 1] -= 32;
+				}
+			}
 		}
-		i++;
 	}
-	if (ls[0] >= 'a' && ls[0] <= 'z')
-	{
-		ls[0] -= 32;
-	}
-	return (ls);
+	return (lower_string);
 }
