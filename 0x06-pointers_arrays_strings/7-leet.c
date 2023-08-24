@@ -11,7 +11,7 @@ char *leet(char *coded_string)
 {
 	int index1, index2;
 	char coded_char[] = "AEOTLaeotl";
-	char code[] = "4370143701";
+	char code[] = "4307143071";
 
 	for (index1 = 0; coded_string[index1] != '\0'; index1++)
 	{
