@@ -11,19 +11,20 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, index1, index2;
-	char matched_String[] = haystack;
+	int index1, index2;
+	char *matched_Char;
 
-	for (index1 = 0; haystack[index1] != '\0'; index1++)
+	for (index1 = 0; needle[index1] != '\0'; index1++)
 	{
-		for (index2 = 0; needle[index2] != '\0'; index2++)
+		for (index2 = 0; haystack[index2] != '\0'; index2++)
 		{
-			if (needle[index2] == haystack[index1])
+			if (needle[index1] == haystack[index2])
 			{
-				matched_String[i] = haystack[index1];
-				i++;
+				matched_Char = &haystack[index2];
+				break;
 			}
 		}
+		return (matched_Char);
 	}
-	return (matched_String);
+	return (0);
 }
