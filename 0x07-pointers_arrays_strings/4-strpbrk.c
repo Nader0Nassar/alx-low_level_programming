@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * _strspn - computes the length of a prefix substring
+ * _strpbrk - computes the length of a prefix substring
  *
  * @s: scanned string
  * @accept: matched characters with s
  *
- * Return: integer
+ * Return: Pointer
  */
 
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	int index1, index2;
-	unsigned int matched_Length = 0;
+	char *matched_Char;
 
 	for (index1 = 0; s[index1] != '\0'; index1++)
 	{
@@ -20,12 +20,10 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (accept[index2] == s[index1])
 			{
-				matched_Length++;
-				break;
+				matched_Char = &s[index1];
+				return (matched_Char);
 			}
-			else if (accept[index2 + 1] == '\0')
-				return (matched_Length);
 		}
 	}
-	return (matched_Length);
+	return (0);
 }
