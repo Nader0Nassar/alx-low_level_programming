@@ -40,7 +40,7 @@ int _sqrt_recursion(int n)
 	else if (n < 0)
 	{
 		return (-1);
-	}	
+	}
 	/*Recusive Rule*/
-	return (_sqrt_by_iteration_recursion(n,1));
+	return (_sqrt_by_iteration_recursion(n, 1));
 }
