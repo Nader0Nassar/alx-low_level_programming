@@ -14,13 +14,9 @@ int divisor(int n, int div)
 	if (div <= 9)
 	{
 		if (n % div != 0)
-		{
 			return (divisor(n, div + 1));
-		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
 }
@@ -36,8 +32,6 @@ int divisor(int n, int div)
 int is_prime_number(int n)
 {
 	if (n <= 1)
-	{
 		return (0);
-	}
 	return (divisor(n, 2));
 }
