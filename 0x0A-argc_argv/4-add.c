@@ -23,14 +23,13 @@ int main(int argc, char **argv)
 		{
 			for (num_char = argv[argc]; *num_char; num_char++)
 			{
-				if (*num_char >= '0' && *num_char <= '9')
-					Add_store = Add_store + atoi(argv[argc]);
-				else
+				if (*num_char < 48 || *num_char > 57)
 				{
 					printf("Error\n");
 					return (0);
 				}
 			}
+			Add_store = Add_store + atoi(argv[argc]);
 		}
 	}
 	printf("%d\n", Add_store);
