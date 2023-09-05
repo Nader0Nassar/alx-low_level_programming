@@ -16,9 +16,7 @@ int **alloc_grid(int width, int height)
 
 	if (width == 0 || height == 0)
 		return (NULL);
-
 	zeros_Grid = malloc(sizeof(int *) * height);
-
 	if (zeros_Grid == NULL)
 		return (NULL);
 	for (h_index = 0; h_index < height; h_index++)
@@ -31,13 +29,8 @@ int **alloc_grid(int width, int height)
 			free(zeros_Grid);
 			return (NULL);
 		}
-	}
-	for (h_index = 0; h_index < height; h_index++)
-	{
 		for (w_index = 0; w_index < width; w_index++)
-		{
 			zeros_Grid[h_index][w_index] = 0;
-		}
 	}
 	return (zeros_Grid);
 }
