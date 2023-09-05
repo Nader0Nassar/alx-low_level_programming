@@ -16,32 +16,28 @@ char *argstostr(int ac, char **av)
 
 	if (av == NULL || ac == 0)
 		return (NULL);
-	while (r_index < ac)
+
+	for (r_index = 0; r_index < ac; r_index++)
 	{
-		while (av[r_index][c_index])
-		{
+		for (c_index = 0; av[r_index][c_index]; c_index++)
 			length++;
-			c_index++;
-		}
-		r_index++;
 	}
 	length += ac;
+
 	concatenated_Arg = malloc(sizeof(char) * length + 1);
 	if (concatenated_Arg == NULL)
 		return (NULL);
-	r_index = 0;
-	while (r_index < ac)
+	for (r_index = 0; r_index < ac; r_index++)
 	{
-		c_index = 0;
-		while (av[r_index][c_index])
+		for (c_index = 0; av[r_index][c_index]; c_index++)
 		{
 			concatenated_Arg[index] = av[r_index][c_index];
 			index++;
-			c_index++;
 		}
 		if (concatenated_Arg[index] == '\0')
+		{
 			concatenated_Arg[index++] = '\n';
-		r_index++;
+		}
 	}
 	return (concatenated_Arg);
 }
