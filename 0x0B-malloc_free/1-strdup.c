@@ -20,5 +20,6 @@ char *_strdup(char *str)
 		*(dublicated_String + index) = str[index];
 		index++;
 	}
+	dublicated_String[index] = '\0';
 	return (dublicated_String);
 }
