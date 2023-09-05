@@ -13,6 +13,8 @@ char *_strdup(char *str)
 	char *dublicated_String = malloc(strlen(str) + 1);
 	int index = 0, length = strlen(str);
 
+	if (str == NULL)
+		return (NULL);
 	if (dublicated_String == NULL)
 		return (NULL);
 	while (index < length)
@@ -20,6 +22,5 @@ char *_strdup(char *str)
 		*(dublicated_String + index) = str[index];
 		index++;
 	}
-	dublicated_String[index] = '\0';
 	return (dublicated_String);
 }
