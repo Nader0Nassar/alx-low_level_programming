@@ -11,15 +11,17 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int index = 0, length_s1 = strlen(s1), length_s2 = strlen(s2);
+	int index, length_s1, length_s2;
 	char *concatenated_String;
-
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	concatenated_String = malloc(length_s1 + length_s2 + 2);
+	index = 0;
+	length_s1 = strlen(s1);
+	length_s2 = strlen(s2);
+	concatenated_String = malloc(length_s1 + length_s2 + 1);
 	if (concatenated_String == NULL)
 		return (NULL);
 	while (index < length_s1 + length_s2)
