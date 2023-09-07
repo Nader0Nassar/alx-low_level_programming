@@ -36,5 +36,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			*(concatenated_String + index) = s2[index - length_s1];
 		index++;
 	}
+	concatenated_String[index] = '\0';
 	return (concatenated_String);
 }
