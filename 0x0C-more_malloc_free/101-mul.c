@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	length_num2 = _strlen(num2);
 	length_multip = length_num1 + length_num2 + 1;
 	multip = malloc(sizeof(int) * length_multip);
-	if (!multip)
+	if (multip == NULL)
 		return (1);
 	for (i = 0; i <= length_num1 + length_num2; i++)
 		multip[i] = 0;
