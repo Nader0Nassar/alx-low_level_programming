@@ -24,6 +24,5 @@ int *array_range(int min, int max)
 		*(Daynamic_Array + index) = index;
 		index++;
 	}
-	Daynamic_Array[index] = '\0';
 	return (Daynamic_Array);
 }
