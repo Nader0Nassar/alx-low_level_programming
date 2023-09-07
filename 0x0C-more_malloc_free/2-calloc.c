@@ -18,9 +18,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	Daynamic_Array = malloc(nmemb * size);
 	if (Daynamic_Array == NULL)
 		return (NULL);
-	while (index < size)
+	while (index < nmemb * size)
 	{
-		*(Daynamic_Array + index) = '0';
+		*(Daynamic_Array + index) = 0;
 		index++;
 	}
 	return (Daynamic_Array);
