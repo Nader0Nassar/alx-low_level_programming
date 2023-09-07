@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	length_multip = length_num1 + length_num2 + 1;
 	multip = malloc(sizeof(int) * length_multip);
 	if (multip == NULL)
-		return (1);
+		return (NULL);
 	while (index < length_multip)
 	{
 		multip[index] = 0;
