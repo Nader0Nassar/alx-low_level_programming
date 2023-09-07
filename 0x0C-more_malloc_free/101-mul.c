@@ -34,12 +34,12 @@ int main(int argc, char *argv[])
 		index++;
 	}
 	length_num1--;
-	length_num2--;
 
 	while (length_num1 >= 0)
 	{
 		n1 = num1[length_num1] - '0';
 		rem = 0;
+		length_num2 = _strlen(num2) - 1;
 		while (length_num2 >= 0)
 		{
 			n2 = num2[length_num2] - '0';
