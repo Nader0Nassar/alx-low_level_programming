@@ -4,6 +4,7 @@
 void _puts(char *);
 int _atoi(char *);
 void print_number(int);
+int _isdigit(char *);
 
 /**
  * main - Main Function
@@ -16,18 +17,35 @@ int main(int argc, char **argv)
 {
 	unsigned long int multip;
 
-	if (argc != 3)
+	if (_isdigit(argv[1]) || _isdigit(argv[2]) || argc != 3)
 	{
 		_puts("Error");
-		exit (98);
+		exit(98);
 	}
 	else
 	{
 		multip = _atoi(argv[1]) * _atoi(argv[2]);
 		print_number(multip);
-        _putchar('\n');
+		_putchar('\n');
 	}
 	return (0);
+}
+/**
+ * _isdigit - checks for digits 0:9
+ * @string: The input to check
+ * Return: On success 1.
+ */
+int _isdigit(char *string)
+{
+	int index = 0;
+
+	while (string[index] != '\0')
+	{
+		if (string[index] < '0' || string[index] > '9')
+			return (0);
+		index++;
+	}
+	return (1);
 }
 /**
  * print_number - prints a number
