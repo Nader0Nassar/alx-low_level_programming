@@ -33,19 +33,24 @@ int main(int argc, char *argv[])
 		multip[index] = 0;
 		index++;
 	}
-	for (length_num1 = length_num1 - 1; length_num1 >= 0; length_num1--)
+	length_num1--;
+	length_num2--;
+
+	while (length_num1 >= 0)
 	{
 		n1 = num1[length_num1] - '0';
 		rem = 0;
-		for (length_num2 = _strlen(num2) - 1; length_num2 >= 0; length_num2--)
+		while (length_num2 >= 0)
 		{
 			n2 = num2[length_num2] - '0';
 			rem += multip[length_num1 + length_num2 + 1] + (n1 * n2);
 			multip[length_num1 + length_num2 + 1] = rem % 10;
 			rem /= 10;
+			length_num2--;
 		}
 		if (rem > 0)
 			multip[length_num1 + length_num2 + 1] += rem;
+		length_num1--;
 	}
 	for (i = 0; i < length_multip - 1; i++)
 	{
