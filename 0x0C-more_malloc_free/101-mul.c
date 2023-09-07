@@ -1,0 +1,91 @@
+#include "main.h"
+#include <stdlib.h>
+
+void _puts(char *);
+int _atoi(char *);
+void print_number(int);
+
+/**
+ * main - Main Function
+ * @argc: # of arg
+ * @argv: Array of arg
+ *
+ * Return: zero
+ */
+int main(int argc, char **argv)
+{
+	unsigned long int multip;
+
+	if (argc != 3)
+	{
+		_puts("Error");
+		exit (98);
+	}
+	else
+	{
+		multip = _atoi(argv[1]) * _atoi(argv[2]);
+		print_number(multip);
+        _putchar('\n');
+	}
+	return (0);
+}
+/**
+ * print_number - prints a number
+ * @n:  The printed number
+ * Return: void
+ */
+void print_number(int n)
+{
+	unsigned long int new_N = n;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		new_N = n * -1;
+	}
+	if ((new_N / 10) > 0)
+		print_number(new_N / 10);
+	_putchar('0' + (new_N % 10));
+}
+/**
+ * _atoi - convert a string to an integer
+ * @s: string
+ * Return: number
+ */
+int _atoi(char *s)
+{
+	int i = 0, index = 0, sign_before = 1;
+	unsigned int value = 0;
+
+	while (s[index] != '\0')
+	{
+		while (s[i] < 48 || s[i] > 57)
+		{
+			if (s[i] == 45)
+				sign_before *= -1;
+			i++;
+		}
+		if (s[index] >= 48 && s[index] <= 57)
+		{
+			value = value * 10 + s[index] - 48;
+			if (s[index + 1] < 48 || s[index + 1] > 57)
+				break;
+		}
+		index++;
+	}
+	return (sign_before * value);
+}
+/**
+ * _puts -  prints a string
+ * @str: The printed string
+ * Return: void
+ */
+void _puts(char *str)
+{
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+	}
+	_putchar('\n');
+}
