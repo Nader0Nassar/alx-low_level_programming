@@ -13,7 +13,8 @@ int _strlen(char *);
 int main(int argc, char *argv[])
 {
 	char *num1, *num2;
-	int length_num1, length_num2, length_multip, i, index = 0, rem, n1, n2, *multip, c = 0;
+	int length_num1, length_num2, length_multip, i, index = 0;
+	int rem, n1, n2, *multip, c = 0;
 
 	num1 = argv[1], num2 = argv[2];
 	if (argc != 3 || !_isdigit(num1) || !_isdigit(num2))
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 	multip = malloc(sizeof(int) * length_multip);
 	if (multip == NULL)
 		return (1);
-	while (index <= length_num1 + length_num2)
+	while (index < length_multip)
 	{
 		multip[index] = 0;
 		index++;
