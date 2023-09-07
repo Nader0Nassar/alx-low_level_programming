@@ -39,7 +39,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			*(new_Pointer + index) = *(old_Pointer + index);
 			index++;
 		}
-		free(ptr);
-		return (new_Pointer);
 	}
+	free(ptr);
+	return (new_Pointer);
 }
