@@ -21,7 +21,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	while (index < max - min + 1)
 	{
-		*(Daynamic_Array + index) = index;
+		*(Daynamic_Array + index) = min++;
 		index++;
 	}
 	return (Daynamic_Array);
