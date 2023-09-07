@@ -54,13 +54,9 @@ int main(int argc, char *argv[])
 	while (i < length_multip - 1)
 	{
 		if (multip[i])
-			c = 1;
-		if (c)
 			_putchar(multip[i] + 48);
 		i++;
 	}
-	if (!c)
-		_putchar('0');
 	_putchar('\n');
 	free(multip);
 	return (0);
