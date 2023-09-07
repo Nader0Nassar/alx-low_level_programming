@@ -10,12 +10,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *array;
+	char *Daynamic_Array;
+	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	array = malloc(nmemb * size);
-	if (array == NULL)
+	Daynamic_Array = malloc(nmemb * size);
+	if (Daynamic_Array == NULL)
 		return (NULL);
-	return (array);
+	while (index < size)
+	{
+		*(Daynamic_Array + index) = 0;
+		index++;
+	}
+	return (Daynamic_Array);
 }
