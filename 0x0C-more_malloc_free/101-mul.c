@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	length_num2 = _strlen(num2);
 	length_multip = length_num1 + length_num2 + 1;
 	multip = malloc(sizeof(int) * length_multip);
-	if (multip == NULL)
+	if (!multip)
 	{
 		_puts("Error");
 		exit(98);
