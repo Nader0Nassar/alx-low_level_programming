@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void _puts(char *);
-int _atoi(char *);
+long int _atoi(char *);
 void print_number(unsigned long int);
 int _isdigit(char *);
 
@@ -61,7 +61,7 @@ void print_number(unsigned long int n)
  * @s: string
  * Return: number
  */
-int _atoi(char *s)
+long int _atoi(char *s)
 {
 	int i = 0, index = 0, sign_before = 1;
 	unsigned long int value = 0;
