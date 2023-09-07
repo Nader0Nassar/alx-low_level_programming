@@ -19,7 +19,7 @@ int *array_range(int min, int max)
 	Daynamic_Array = malloc(sizeof(int) * (max - min + 1));
 	if (Daynamic_Array == NULL)
 		return (NULL);
-	while (index < max - min + 1)
+	while (index < max - min)
 	{
 		*(Daynamic_Array + index) = min++;
 		index++;
