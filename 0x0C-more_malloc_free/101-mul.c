@@ -19,13 +19,13 @@ int main(int argc, char **argv)
 	int length_num1, length_num2, length_multip, index = 0;
 	int index1, index2, n1, n2, rem, multip_index = 0;
 
+	num1 = argv[1];
+	num2 = argv[2];
 	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
 		_puts("Error");
 		exit(98);
 	}
-	num1 = argv[1];
-	num2 = argv[2];
 	length_num1 = _strlen(num1);
 	length_num2 = _strlen(num2);
 	length_multip = length_num1 + length_num2 + 1;
@@ -33,7 +33,10 @@ int main(int argc, char **argv)
 	if (multip == NULL)
 		return (1);
 	while (index < length_multip)
-		multip[index++] = 0;
+	{
+		multip[index] = 0;
+		index++;
+	}
 	index1 = length_num1 - 1;
 	while (index1 >= 0)
 	{
