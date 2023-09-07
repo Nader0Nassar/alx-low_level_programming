@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 void _puts(char *);
 int _atoi(char *);
-void print_number(int);
+void print_number(unsigned long int);
 int _isdigit(char *);
 
 /**
@@ -15,17 +16,14 @@ int _isdigit(char *);
  */
 int main(int argc, char **argv)
 {
-	unsigned long int multip;
-
-	if (argc != 3 || _isdigit(argv[1]) || _isdigit(argv[2]))
+	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
 		_puts("Error");
 		exit(98);
 	}
 	else
 	{
-		multip = _atoi(argv[1]) * _atoi(argv[2]);
-		print_number(multip);
+		print_number(_atoi(argv[1]) * _atoi(argv[2]));
 		_putchar('\n');
 	}
 	return (0);
@@ -52,18 +50,11 @@ int _isdigit(char *string)
  * @n:  The printed number
  * Return: void
  */
-void print_number(int n)
+void print_number(unsigned long int n)
 {
-	unsigned long int new_N = n;
-
-	if (n < 0)
-	{
-		_putchar('-');
-		new_N = n * -1;
-	}
-	if ((new_N / 10) > 0)
-		print_number(new_N / 10);
-	_putchar('0' + (new_N % 10));
+	if ((n / 10) > 0)
+		print_number(n / 10);
+	_putchar('0' + (n % 10));
 }
 /**
  * _atoi - convert a string to an integer
@@ -73,7 +64,7 @@ void print_number(int n)
 int _atoi(char *s)
 {
 	int i = 0, index = 0, sign_before = 1;
-	unsigned int value = 0;
+	unsigned long int value = 0;
 
 	while (s[index] != '\0')
 	{
