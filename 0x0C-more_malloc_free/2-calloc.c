@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	while (index < size)
 	{
-		*(Daynamic_Array + index) = 0;
+		*(Daynamic_Array + index) = '0';
 		index++;
 	}
 	return (Daynamic_Array);
