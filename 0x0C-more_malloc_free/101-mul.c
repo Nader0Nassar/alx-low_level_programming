@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	char *num1, *num2;
 	int *multip;
 	int length_num1, length_num2, length_multip, index = 0;
-	int index1, index2, n1, n2, rem, multip_index = 0;
+	int index1 = 0, index2 = 0, n1, n2, rem, multip_index = 0;
 
 	num1 = argv[1];
 	num2 = argv[2];
@@ -40,14 +40,14 @@ int main(int argc, char **argv)
 		multip[index] = 0;
 		index++;
 	}
-	index1 = length_num1 - 1;
 	while (index1 >= 0)
 	{
+		index1 = length_num1 - 1;
 		n1 = num1[index1] - 48;
 		rem = 0;
-		index2 = length_num2 - 1;
 		while (index2 >= 0)
 		{
+			index2 = length_num2 - 1;
 			n2 = num2[index2] - 48;
 			rem = rem + multip[index1 + index2 + 1] + (n1 * n2);
 			multip[index1 + index2 + 1] = rem % 10;
