@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	char *num1, *num2;
 	int *multip;
 	int length_num1, length_num2, length_multip, index = 0;
-	int index1, index2, n1, n2, rem, multip_index = 0, c;
+	int index1, index2, n1, n2, rem, multip_index = 0;
 
 	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
@@ -55,12 +55,8 @@ int main(int argc, char **argv)
 	for (multip_index = 0; multip_index < length_multip - 1; multip_index++)
 	{
 		if (multip[multip_index])
-			c = 1;
-		if (c)
 			_putchar(multip[multip_index] + 48);
 	}
-	if (!c)
-		_putchar('0');
 
 	_putchar('\n');
 	free(multip);
