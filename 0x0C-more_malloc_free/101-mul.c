@@ -1,9 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void _puts(char *);
-long int _atoi(char *);
+unsigned long int _atoi(char *);
 void print_number(unsigned long int);
 int _isdigit(char *);
 
@@ -61,19 +60,13 @@ void print_number(unsigned long int n)
  * @s: string
  * Return: number
  */
-long int _atoi(char *s)
+unsigned long int _atoi(char *s)
 {
-	int i = 0, index = 0, sign_before = 1;
+	int index = 0;
 	unsigned long int value = 0;
 
 	while (s[index] != '\0')
 	{
-		while (s[i] < 48 || s[i] > 57)
-		{
-			if (s[i] == 45)
-				sign_before *= -1;
-			i++;
-		}
 		if (s[index] >= 48 && s[index] <= 57)
 		{
 			value = value * 10 + s[index] - 48;
@@ -82,7 +75,7 @@ long int _atoi(char *s)
 		}
 		index++;
 	}
-	return (sign_before * value);
+	return (value);
 }
 /**
  * _puts -  prints a string
