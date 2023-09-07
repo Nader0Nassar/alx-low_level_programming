@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	multip = malloc(sizeof(int) * length_multip);
 	if (multip == NULL)
 		return (1);
-	while (index < length_multip)
+	while (index <= length_num1 + length_num2)
 	{
 		multip[index] = 0;
 		index++;
