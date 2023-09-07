@@ -4,66 +4,54 @@
 void _puts(char *);
 int _isdigit(char *);
 int _strlen(char *);
-
 /**
  * main - Main Function
  * @argc: # of arg
  * @argv: Array of arg
- *
  * Return: zero
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	char *num1, *num2;
-	int *multip;
-	int length_num1, length_num2, length_multip, index = 0;
-	int index1 = 0, index2 = 0, n1, n2, rem, multip_index = 0;
+	int length_num1, length_num2, length_multip, i, rem, n1, n2, *multip, c = 0;
 
-	num1 = argv[1];
-	num2 = argv[2];
-	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
-	{
-		_puts("Error");
-		exit(98);
-	}
+	num1 = argv[1], num2 = argv[2];
+	if (argc != 3 || !_isdigit(num1) || !_isdigit(num2))
+    {
+    	_puts("Error");
+    	exit(98);
+    }
 	length_num1 = _strlen(num1);
 	length_num2 = _strlen(num2);
 	length_multip = length_num1 + length_num2 + 1;
 	multip = malloc(sizeof(int) * length_multip);
 	if (!multip)
+		return (1);
+	for (i = 0; i <= length_num1 + length_num2; i++)
+		multip[i] = 0;
+	for (length_num1 = length_num1 - 1; length_num1 >= 0; length_num1--)
 	{
-		_puts("Error");
-		exit(98);
-	}
-	while (index < length_multip)
-	{
-		multip[index] = 0;
-		index++;
-	}
-	while (index1 >= 0)
-	{
-		index1 = length_num1 - 1;
-		n1 = num1[index1] - 48;
+		n1 = num1[length_num1] - '0';
 		rem = 0;
-		while (index2 >= 0)
+		for (length_num2 = _strlen(num2) - 1; length_num2 >= 0; length_num2--)
 		{
-			index2 = length_num2 - 1;
-			n2 = num2[index2] - 48;
-			rem = rem + multip[index1 + index2 + 1] + (n1 * n2);
-			multip[index1 + index2 + 1] = rem % 10;
-			rem = rem / 10;
-			index2--;
+			n2 = num2[length_num2] - '0';
+			rem += multip[length_num1 + length_num2 + 1] + (n1 * n2);
+			multip[length_num1 + length_num2 + 1] = rem % 10;
+			rem /= 10;
 		}
 		if (rem > 0)
-			multip[index1 + index2 + 1] = multip[index1 + index2 + 1] + rem;
-		index1--;
+			multip[length_num1 + length_num2 + 1] += rem;
 	}
-	for (multip_index = 0; multip_index < length_multip - 1; multip_index++)
+	for (i = 0; i < length_multip - 1; i++)
 	{
-		if (multip[multip_index])
-			_putchar(multip[multip_index] + 48);
+		if (multip[i])
+			c = 1;
+		if (c)
+			_putchar(multip[i] + '0');
 	}
-
+	if (!c)
+		_putchar('0');
 	_putchar('\n');
 	free(multip);
 	return (0);
@@ -87,16 +75,15 @@ void _puts(char *str)
  * @s: string to compute the length of it
  * Return: Always 0
  */
-int _strlen(char *s)
+int _strlen(char *string)
 {
-	int i = 0;
+	int index = 0;
 
-	while (*s != '\0')
+	while (string[index] != '\0')
 	{
-		i++;
-		s++;
+		index++;
 	}
-	return (i);
+	return (index);	
 }
 /**
  * _isdigit - checks for digits 0:9
