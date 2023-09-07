@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 {
 	unsigned long int multip;
 
-	if (_isdigit(argv[1]) || _isdigit(argv[2]) || argc != 3)
+	if (argc != 3 || _isdigit(argv[1]) || _isdigit(argv[2]))
 	{
 		_puts("Error");
 		exit(98);
