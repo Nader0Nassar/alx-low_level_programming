@@ -13,7 +13,7 @@ int _strlen(char *);
 int main(int argc, char *argv[])
 {
 	char *num1, *num2;
-	int length_num1, length_num2, length_multip, i, index = 0;
+	int length_num1, length_num2, length_multip, i = 0, index = 0;
 	int rem, n1, n2, *multip, c = 0;
 
 	num1 = argv[1], num2 = argv[2];
@@ -34,15 +34,14 @@ int main(int argc, char *argv[])
 		index++;
 	}
 	length_num1--;
-
 	while (length_num1 >= 0)
 	{
-		n1 = num1[length_num1] - '0';
+		n1 = num1[length_num1] - 48;
 		rem = 0;
 		length_num2 = _strlen(num2) - 1;
 		while (length_num2 >= 0)
 		{
-			n2 = num2[length_num2] - '0';
+			n2 = num2[length_num2] - 48;
 			rem += multip[length_num1 + length_num2 + 1] + (n1 * n2);
 			multip[length_num1 + length_num2 + 1] = rem % 10;
 			rem /= 10;
@@ -52,12 +51,13 @@ int main(int argc, char *argv[])
 			multip[length_num1 + length_num2 + 1] += rem;
 		length_num1--;
 	}
-	for (i = 0; i < length_multip - 1; i++)
+	while (i < length_multip - 1)
 	{
 		if (multip[i])
 			c = 1;
 		if (c)
-			_putchar(multip[i] + '0');
+			_putchar(multip[i] + 48);
+		i++;
 	}
 	if (!c)
 		_putchar('0');
