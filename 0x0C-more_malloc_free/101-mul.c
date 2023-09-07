@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
 
 	num1 = argv[1], num2 = argv[2];
 	if (argc != 3 || !_isdigit(num1) || !_isdigit(num2))
-    {
-    	_puts("Error");
-    	exit(98);
-    }
+	{
+		_puts("Error");
+		exit(98);
+	}
 	length_num1 = _strlen(num1);
 	length_num2 = _strlen(num2);
 	length_multip = length_num1 + length_num2 + 1;
@@ -72,7 +72,7 @@ void _puts(char *str)
 }
 /**
  * _strlen -  returns the length of a string
- * @s: string to compute the length of it
+ * @string: string to compute the length of it
  * Return: Always 0
  */
 int _strlen(char *string)
@@ -83,7 +83,7 @@ int _strlen(char *string)
 	{
 		index++;
 	}
-	return (index);	
+	return (index);
 }
 /**
  * _isdigit - checks for digits 0:9
