@@ -1,6 +1,7 @@
 #include "dog.h"
 #include <stdlib.h>
 
+char *copy_string(char *, char *);
 /**
  * new_dog - This function used to create a new dog.
  * @name: pointer to the name of the dog
@@ -36,9 +37,34 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new_dog_info);
 		return (NULL);
 	}
-	new_dog_info->name = name;
+
+	copy_string(new_dog_info->name, name);
 	new_dog_info->age = age;
-	new_dog_info->owner = owner;
+	copy_string(new_dog_info->owner, owner);
 
 	return (new_dog_info);
+}
+/**
+ * copy_string - copies the string from src to dest
+ *
+ * @dest: first pointer
+ * @src: second pointer
+ *
+ * Return: copied string
+ */
+
+char *copy_string(char *dest, char *src)
+{
+	int i = 0, index, length = 0;
+
+	while (src[i] != '\0')
+	{
+		length++;
+		i++;
+	}
+	for (index = 0; index <= length; index++)
+	{
+		dest[index] = src[index];
+	}
+	return (dest);
 }
