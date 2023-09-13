@@ -25,9 +25,13 @@ int main(int argc, char **argv)
 	array = (char *)main;
 	while (index < size)
 	{
+		if (index == size - 1)
+		{
+			printf("%02hhx\n", array[index]);
+			break;
+		}
 		printf("%02hhx ", array[index]);
 		index++;
 	}
-	printf("\n");
 	return (0);
 }
