@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	num1 = atoi(argv[1]);
-	num2 = argv[3];
+	num2 = atoi(argv[3]);
 	oper = argv[2];
 	if (oper[1] != '\0' || get_op_func(oper) == NULL)
 	{
