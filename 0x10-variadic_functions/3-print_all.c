@@ -17,6 +17,8 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 	char *string;
 
+	if (format == NULL)
+		return;
 	va_start(printed_List, format);
 	while (*printed_Format != '\0')
 	{
