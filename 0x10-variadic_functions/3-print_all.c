@@ -13,16 +13,16 @@
 void print_all(const char * const format, ...)
 {
 	va_list printed_List;
-	const char *printed_Format = format;
 	char *separator = "";
 	char *string;
+	int index = 0;
 
-	va_start(printed_List, format);
 	if (format == NULL)
 		return;
-	while (*printed_Format != '\0')
+	va_start(printed_List, format);
+	while (format[index] != '\0')
 	{
-		switch (*printed_Format)
+		switch (format[index])
 		{
 		case 'c':
 			printf("%s%c", separator, va_arg(printed_List, int));
@@ -40,10 +40,10 @@ void print_all(const char * const format, ...)
 			printf("%s%s", separator, string);
 			break;
 		default:
-			printed_Format++;
+			index++;
 			break;
 		}
-		printed_Format++;
+		index++;
 		separator = ", ";
 	}
 	printf("\n");
