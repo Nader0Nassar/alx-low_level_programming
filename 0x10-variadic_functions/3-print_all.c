@@ -18,6 +18,8 @@ void print_all(const char * const format, ...)
 	char *string;
 
 	va_start(printed_List, format);
+	if (format == NULL)
+		return;
 	while (*printed_Format != '\0')
 	{
 		switch (*printed_Format)
