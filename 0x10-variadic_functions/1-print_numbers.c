@@ -16,12 +16,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int index;
 
 	va_start(Nums, n);
-	for (index = 1; index < n; index++)
+	for (index = 0; index < n; index++)
 	{
 		printf("%d", va_arg(Nums, int));
-		if (separator != NULL)
+		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
-	printf("%d\n", va_arg(Nums, int));
+	printf("\n");
 	va_end(Nums);
 }
