@@ -5,7 +5,7 @@
  * add_node_end - This function adds a new node at the end.
  * @head: head.
  * @str: string to duplicate.
- * Return: Number of elements.
+ * Return: new node.
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
