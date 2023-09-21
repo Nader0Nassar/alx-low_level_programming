@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * list_len - This function computes the number of elements 
+ * list_len - This function computes the number of elements
  * @h: head.
  * Return: length.
  */
