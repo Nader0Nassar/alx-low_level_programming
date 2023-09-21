@@ -1,4 +1,5 @@
 #include <stdio.h>
+void before_main(void) __attribute__ ((constructor));
 /**
  * before_main - This function prints sentence before main
  */
