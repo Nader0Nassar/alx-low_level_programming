@@ -8,20 +8,20 @@
  */
 size_t print_list(const list_t *h)
 {
-    const list_t *ptr = malloc(sizeof(list_t));
-    int count = 0;
+	const list_t *ptr = malloc(sizeof(list_t));
+	int count = 0;
 
-    if (h->str == NULL)
-        printf("[0] (nil)\n");
-    else
-    {
-        ptr = h;
-        while (ptr->next != NULL)
-        {
-            count++;
-            printf("[%d] %s\n", ptr->len, ptr->str);
-            ptr = ptr->next;
-        }
-    }    
-    return (count);
+	if (h->str == NULL)
+		printf("[0] (nil)\n");
+	else
+	{
+		ptr = h;
+		while (ptr->next != NULL)
+		{
+			count++;
+			printf("[%d] %s\n", ptr->len, ptr->str);
+			ptr = ptr->next;
+		}
+	}
+	return (count);
 }
