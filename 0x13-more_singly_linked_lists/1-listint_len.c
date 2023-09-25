@@ -1,12 +1,11 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
- * print_listint - This function prints list of integers.
+ * listint_len - This function compute the length.
  * @h: header of list.
  * Return: Number of nodes.
 */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t counter = 0;
 
@@ -15,7 +14,6 @@ size_t print_listint(const listint_t *h)
 		while (h != NULL)
 		{
 			counter++;
-			printf("%d\n", h->n);
 			h = h->next;
 		}
 	}
