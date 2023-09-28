@@ -7,9 +7,9 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int itr;
-	int counter, checker = 0;
+	int counter = 63, checker = 0;
 
-	for (counter = 20; counter >= 0; counter--)
+	for (; counter >= 0; counter--)
 	{
 		itr = n >> counter;
 		if (itr & 1)
